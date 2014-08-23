@@ -1,0 +1,17 @@
+machine:
+  timezone:
+    Asia/Tokyo # Set the timezone
+  ruby:
+    version:
+      2.1.1
+
+database:
+  pre:
+    - bundle exec fake_dynamo -b /tmp/fdb.db -D
+    - sleep 5
+  override:
+    - bundle exec rake db:migrate
+
+test:
+  override:
+    - bundle exec rake spec
