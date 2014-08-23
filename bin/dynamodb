@@ -1,0 +1,2 @@
+#!/bin/sh
+nohup bash -c "java -Djava.library.path=./lib/dynamodb/DynamoDBLocal_lib/ -jar ./lib/dynamodb/DynamoDBLocal.jar  -port 4567 -inMemory &"
