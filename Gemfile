@@ -40,3 +40,8 @@ gem 'spring',        group: :development
 
 gem 'dymos'
 gem 'fake_dynamo'
+
+group :test do
+  gem "rspec"
+  gem "rspec-rails"
+end
