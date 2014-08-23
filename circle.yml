@@ -7,7 +7,7 @@ machine:
 
 database:
   pre:
-    - bundle exec fake_dynamo -b /tmp/fdb.db -D &
+    - bundle exec fake_dynamo -d /tmp/fdb.db -D &
     - sleep 5
   override:
     - bundle exec rake db:migrate
