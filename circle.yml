@@ -6,9 +6,9 @@ machine:
       2.1.1
 
 database:
+  pre:
+    - ./bin/dynamodb
   override:
-    - ./bin/dynamodb:
-      background: true
     - bundle exec rake db:migrate
 
 test:
