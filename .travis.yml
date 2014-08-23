@@ -4,5 +4,5 @@ rvm:
   - 2.1.1
 before_script:
 #  - bundle exec fake_dynamo -d /tmp/db.fdb -D
-  - java -Djava.library.path=./lib/dynamodb/DynamoDBLocal_lib/ -jar ./lib/dynamodb/DynamoDBLocal.jar  -port 4567 -inMemory
+  - java -Djava.library.path=./lib/dynamodb/DynamoDBLocal_lib/ -jar ./lib/dynamodb/DynamoDBLocal.jar  -port 4567 -inMemory &
   - bundle exec rake db:migrate
