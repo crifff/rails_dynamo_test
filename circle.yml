@@ -6,10 +6,8 @@ machine:
       2.1.1
 
 database:
-  pre:
-    - bundle exec fake_dynamo -d /tmp/fdb.db -D &
-    - sleep 5
   override:
+    - java -Djava.library.path=./lib/dynamodb/DynamoDBLocal_lib/ -jar ./lib/dynamodb/DynamoDBLocal.jar  -port 4567 -inMemory &
     - bundle exec rake db:migrate
 
 test:
